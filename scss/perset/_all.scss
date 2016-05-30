@@ -1,0 +1,352 @@
+@import "_color";
+@import "_mixin";
+
+/*
+  Let the file begins.
+  Written by SCSS
+*/
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+// Width Settings
+// Responsive limits
+$on-phone:         820px;
+$on-laptop:        990px;
+$on-desktop:       1200px;
+
+/**
+ * Fonts setting
+ */
+@mixin font-content() {
+  font-family: "Josefin Sans", "Helvetica Neue", 'Segoe UI Light', Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft JhengHei", "Microsoft Yahei", "Simhei", sans-serif;
+}
+@mixin font-header() {
+  font-family: "Josefin Sans", "Helvetica Neue", 'Segoe UI Light', Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft JhengHei", "Microsoft Yahei", "Simhei", sans-serif;
+}
+@mixin font-monospace() {
+  font-family: Inconsolata, Consolas, monospace, sans-serif;
+}
+
+/**
+ * Fonts
+ */
+@font-face {
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Josefin Sans'), local('JosefinSans'), url('../fonts/JosefinSans-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Josefin Sans Bold'), local('JosefinSans-Bold'), url('../fonts/JosefinSans-bold.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+  font-family: 'Josefin Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Josefin Sans Italic'), local('JosefinSans-Italic'), url('../fonts/JosefinSans-italic.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+@font-face {
+  font-family: 'Josefin Sans';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Josefin Sans Bold Italic'), local('JosefinSans-BoldItalic'), url('../fonts/JosefinSans-bolditalic.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+@font-face {
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Inconsolata'), url('../fonts/Inconsolata-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Inconsolata Bold'), local('Inconsolata-Bold'), url('../fonts/Inconsolata-bold.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/*
+  Icon Fonts
+*/
+@font-face {
+  font-family: 'icomoon';
+  src:    url('../fonts/icomoon.eot?focxz5');
+  src:    url('../fonts/icomoon.eot?focxz5#iefix') format('embedded-opentype'),
+  url('../fonts/icomoon.ttf?focxz5') format('truetype'),
+  url('../fonts/icomoon.woff?focxz5') format('woff'),
+  url('../fonts/icomoon.svg?focxz5#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-chevron-down:before {
+  content: "\e902";
+}
+.icon-chevron-left:before {
+  content: "\e903";
+}
+.icon-chevron-right:before {
+  content: "\e904";
+}
+.icon-chevron-thin-down:before {
+  content: "\e906";
+}
+.icon-chevron-thin-left:before {
+  content: "\e907";
+}
+.icon-chevron-thin-right:before {
+  content: "\e908";
+}
+.icon-chevron-thin-up:before {
+  content: "\e909";
+}
+.icon-chevron-up:before {
+  content: "\e905";
+}
+.icon-email:before {
+  content: "\e911";
+}
+.icon-menu:before {
+  content: "\e900";
+}
+.icon-rss:before {
+  content: "\e90f";
+}
+.icon-user:before {
+  content: "\e910";
+}
+.icon-vcard:before {
+  content: "\e912";
+}
+.icon-sina-weibo:before {
+  content: "\e901";
+}
+.icon-github:before {
+  content: "\e90a";
+}
+.icon-google:before {
+  content: "\e90b";
+}
+.icon-pinterest:before {
+  content: "\e90c";
+}
+.icon-twitter:before {
+  content: "\e90d";
+}
+.icon-search:before {
+  content: "\e90e";
+}
+
+
+
+
+::-moz-selection {
+  background: rgba(lighten($material-orange, 15%), 0.7);
+  color: $black;
+}
+
+::selection {
+  background: rgba(lighten($material-orange, 15%), 0.7);
+  color: $black;
+}
+
+html, body {
+  font-size: 100%;
+  // cursor: default;
+  margin: 0;
+  padding: 0;
+
+  @include font-content();
+}
+
+.clearfix {
+  clear: both;
+  *zoom: 1;
+  @include clearfix();
+}
+
+h1, h2, h3,
+h4, h5, h6 {
+  font-weight: 700;
+  @include font-header();
+}
+
+@for $h-i from 1 through 4 {
+  h#{$h-i} {
+    font-size: 2em - ($h-i) * 0.2;
+  }
+}
+h5, h6 {
+  font-size: 1.2em;
+}
+
+a {
+  color: $black;
+  text-decoration: none;
+  transition: all 0.24s ease;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+img, figure {
+  //max-width: 100%;
+  height: auto;
+}
+figure {
+  margin: 0;
+}
+p {
+  line-height: 1.618;
+}
+ul, ol {
+  padding: 0;
+  margin: .5em;
+  margin-left: 1em;
+}
+li {
+  padding: 0;
+  margin-left: 1em;
+}
+table {
+  width: 100%;
+  border-collapse:collapse;
+  th, td {
+    padding: 10px;
+    border: 1px $grey-color solid;
+  }
+}
+code, pre {
+  @include font-monospace();
+}
+code {
+}
+pre {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+hr {
+  display: block;
+  width: 20%;
+  height: 3px;
+  border: 0;
+  border-top: #EFEFEF 3px solid;
+  margin: 2em auto;
+  padding: 0;
+}
+abbr {
+  text-decoration: none;
+}
+ins {
+  background-color: $material-blue;
+  color: #fff;
+  padding: 0.125em 0.25em;
+  text-decoration: none;
+  text-shadow: none;
+}
+dt {
+  font-weight: 700;
+}
+dd {
+  margin: 0 0 1.75em;
+}
+
+* {
+  transition: color .3s, border .3s, background .3s, box-shadow .3s, text-shadow .3s;
+}
+
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute !important;
+  width: 1px;
+  /* many screen reader and browser combinations announce broken words as they would appear visually */
+  word-wrap: normal !important;
+}
+.hidden {
+  visibility: hidden;
+}
+
+input, textarea {
+  box-sizing: border-box;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="number"],
+textarea {
+  @include font-content();
+  border: 1px #ccc solid;
+  width: 100%;
+  padding: .75em 1em;
+  box-sizing: border-box;
+  outline: 0;
+}
+
+button,
+button[disabled]:hover,
+button[disabled]:focus,
+input[type="button"],
+input[type="button"][disabled]:hover,
+input[type="button"][disabled]:focus,
+input[type="reset"],
+input[type="reset"][disabled]:hover,
+input[type="reset"][disabled]:focus,
+input[type="submit"],
+input[type="submit"][disabled]:hover,
+input[type="submit"][disabled]:focus {
+  background: $material-orange none repeat scroll 0% 0%;
+  border: 0px none;
+  color: $black;
+  @include font-header();
+  font-weight: 700;
+  letter-spacing: 0.046875em;
+  line-height: 1;
+  padding: 0.84375em 0.875em 0.78125em;
+  outline: 0;
+}
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  &:hover {
+    background-color: $material-deep-orange;
+  }
+  &:focus {
+    background-color: $material-red;
+  }
+}
