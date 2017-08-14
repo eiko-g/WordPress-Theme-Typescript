@@ -16,6 +16,7 @@ Public resources used in this theme:
 
 - [icomoon](https://icomoon.io/)
 - [normalize.css](https://necolas.github.io/normalize.css/)
+- [Google webfonts helper](https://google-webfonts-helper.herokuapp.com/fonts)
 
 Copyright © Art Chen
 

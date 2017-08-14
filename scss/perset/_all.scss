@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import "_color";
 @import "_mixin";
 
@@ -5,94 +6,116 @@
   Let the file begins.
   Written by SCSS
 */
+
 *,
 *::before,
 *::after {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 // Width Settings
 // Responsive limits
-$on-phone:         820px;
-$on-laptop:        990px;
-$on-desktop:       1200px;
+$on-phone: 820px;
+$on-laptop: 990px;
+$on-desktop: 1200px;
 
 /**
  * Fonts setting
  */
+
 @mixin font-content() {
   font-family: "Josefin Sans", "Helvetica Neue", 'Segoe UI Light', Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft JhengHei", "Microsoft Yahei", "Simhei", sans-serif;
 }
+
 @mixin font-header() {
   font-family: "Josefin Sans", "Helvetica Neue", 'Segoe UI Light', Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft JhengHei", "Microsoft Yahei", "Simhei", sans-serif;
 }
+
 @mixin font-monospace() {
   font-family: Inconsolata, Consolas, monospace, sans-serif;
 }
 
+
 /**
  * Fonts
  */
-@font-face {
-  font-family: 'Josefin Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Josefin Sans'), local('JosefinSans'), url('../fonts/JosefinSans-normal.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-}
-@font-face {
-  font-family: 'Josefin Sans';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Josefin Sans Bold'), local('JosefinSans-Bold'), url('../fonts/JosefinSans-bold.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-}
+
+
+/* josefin-sans-italic - latin */
+
 @font-face {
   font-family: 'Josefin Sans';
   font-style: italic;
   font-weight: 400;
-  src: local('Josefin Sans Italic'), local('JosefinSans-Italic'), url('../fonts/JosefinSans-italic.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+  src: local('Josefin Sans Italic'), local('JosefinSans-Italic'), url('../fonts/josefin-sans-v9-latin-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+  url('../fonts/josefin-sans-v9-latin-italic.woff') format('woff');
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
+
+
+/* josefin-sans-regular - latin */
+
+@font-face {
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Josefin Sans'), local('JosefinSans'), url('../fonts/josefin-sans-v9-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+  url('../fonts/josefin-sans-v9-latin-regular.woff') format('woff');
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+
+/* josefin-sans-700 - latin */
+
+@font-face {
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Josefin Sans Bold'), local('JosefinSans-Bold'), url('../fonts/josefin-sans-v9-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+  url('../fonts/josefin-sans-v9-latin-700.woff') format('woff');
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+
+/* josefin-sans-700italic - latin */
 
 @font-face {
   font-family: 'Josefin Sans';
   font-style: italic;
   font-weight: 700;
-  src: local('Josefin Sans Bold Italic'), local('JosefinSans-BoldItalic'), url('../fonts/JosefinSans-bolditalic.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+  src: local('Josefin Sans Bold Italic'), local('JosefinSans-BoldItalic'), url('../fonts/josefin-sans-v9-latin-700italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+  url('../fonts/josefin-sans-v9-latin-700italic.woff') format('woff');
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
+
+
+/* inconsolata-regular - latin */
 
 @font-face {
   font-family: 'Inconsolata';
   font-style: normal;
   font-weight: 400;
-  src: local('Inconsolata'), url('../fonts/Inconsolata-normal.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+  src: local('Inconsolata Regular'), local('Inconsolata-Regular'), url('../fonts/inconsolata-v15-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+  url('../fonts/inconsolata-v15-latin-regular.woff') format('woff');
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
-@font-face {
-  font-family: 'Inconsolata';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Inconsolata Bold'), local('Inconsolata-Bold'), url('../fonts/Inconsolata-bold.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-}
+
+
 /*
   Icon Fonts
 */
+
 @font-face {
   font-family: 'icomoon';
-  src:    url('../fonts/icomoon.eot?focxz5');
-  src:    url('../fonts/icomoon.eot?focxz5#iefix') format('embedded-opentype'),
-  url('../fonts/icomoon.ttf?focxz5') format('truetype'),
-  url('../fonts/icomoon.woff?focxz5') format('woff'),
-  url('../fonts/icomoon.svg?focxz5#icomoon') format('svg');
+  src: url('../fonts/icomoon.eot?focxz5');
+  src: url('../fonts/icomoon.eot?focxz5#iefix') format('embedded-opentype'), url('../fonts/icomoon.ttf?focxz5') format('truetype'), url('../fonts/icomoon.woff?focxz5') format('woff'), url('../fonts/icomoon.svg?focxz5#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
-[class^="icon-"], [class*=" icon-"] {
+[class^="icon-"],
+[class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: none;
@@ -101,7 +124,6 @@ $on-desktop:       1200px;
   font-variant: normal;
   text-transform: none;
   line-height: 1;
-
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -110,63 +132,78 @@ $on-desktop:       1200px;
 .icon-chevron-down:before {
   content: "\e902";
 }
+
 .icon-chevron-left:before {
   content: "\e903";
 }
+
 .icon-chevron-right:before {
   content: "\e904";
 }
+
 .icon-chevron-thin-down:before {
   content: "\e906";
 }
+
 .icon-chevron-thin-left:before {
   content: "\e907";
 }
+
 .icon-chevron-thin-right:before {
   content: "\e908";
 }
+
 .icon-chevron-thin-up:before {
   content: "\e909";
 }
+
 .icon-chevron-up:before {
   content: "\e905";
 }
+
 .icon-email:before {
   content: "\e911";
 }
+
 .icon-menu:before {
   content: "\e900";
 }
+
 .icon-rss:before {
   content: "\e90f";
 }
+
 .icon-user:before {
   content: "\e910";
 }
+
 .icon-vcard:before {
   content: "\e912";
 }
+
 .icon-sina-weibo:before {
   content: "\e901";
 }
+
 .icon-github:before {
   content: "\e90a";
 }
+
 .icon-google:before {
   content: "\e90b";
 }
+
 .icon-pinterest:before {
   content: "\e90c";
 }
+
 .icon-twitter:before {
   content: "\e90d";
 }
+
 .icon-search:before {
   content: "\e90e";
 }
-
-
-
 
 ::-moz-selection {
   background: rgba(lighten($material-orange, 15%), 0.7);
@@ -178,12 +215,11 @@ $on-desktop:       1200px;
   color: $black;
 }
 
-html, body {
-  font-size: 100%;
-  // cursor: default;
+html,
+body {
+  font-size: 100%; // cursor: default;
   margin: 0;
   padding: 0;
-
   @include font-content();
 }
 
@@ -193,8 +229,12 @@ html, body {
   @include clearfix();
 }
 
-h1, h2, h3,
-h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 700;
   @include font-header();
 }
@@ -204,7 +244,9 @@ h4, h5, h6 {
     font-size: 2em - ($h-i) * 0.2;
   }
 }
-h5, h6 {
+
+h5,
+h6 {
   font-size: 1.2em;
 }
 
@@ -212,48 +254,59 @@ a {
   color: $black;
   text-decoration: none;
   transition: all 0.24s ease;
-
   &:hover {
     text-decoration: none;
   }
 }
 
-img, figure {
+img,
+figure {
   //max-width: 100%;
   height: auto;
 }
+
 figure {
   margin: 0;
 }
+
 p {
   line-height: 1.618;
 }
-ul, ol {
+
+ul,
+ol {
   padding: 0;
   margin: .5em;
   margin-left: 1em;
 }
+
 li {
   padding: 0;
   margin-left: 1em;
 }
+
 table {
   width: 100%;
-  border-collapse:collapse;
-  th, td {
+  border-collapse: collapse;
+  th,
+  td {
     padding: 10px;
     border: 1px $grey-color solid;
   }
 }
-code, pre {
+
+code,
+pre {
   @include font-monospace();
 }
-code {
-}
+
+code {}
+
 pre {
   word-wrap: break-word;
   white-space: pre-wrap;
 }
+
 hr {
   display: block;
   width: 20%;
@@ -263,9 +316,11 @@ hr {
   margin: 2em auto;
   padding: 0;
 }
+
 abbr {
   text-decoration: none;
 }
+
 ins {
   background-color: $material-blue;
   color: #fff;
@@ -273,9 +328,11 @@ ins {
   text-decoration: none;
   text-shadow: none;
 }
+
 dt {
   font-weight: 700;
 }
+
 dd {
   margin: 0 0 1.75em;
 }
@@ -293,11 +350,13 @@ dd {
   /* many screen reader and browser combinations announce broken words as they would appear visually */
   word-wrap: normal !important;
 }
+
 .hidden {
   visibility: hidden;
 }
 
-input, textarea {
+input,
+textarea {
   box-sizing: border-box;
 }
 
@@ -339,6 +398,7 @@ input[type="submit"][disabled]:focus {
   padding: 0.84375em 0.875em 0.78125em;
   outline: 0;
 }
+
 button,
 input[type="button"],
 input[type="reset"],

@@ -1,8 +1,10 @@
+@charset "UTF-8";
 @import "perset/all";
 
 /**
  *  Loading bar
  */
+
 #loading-bar-wrapper {
   position: absolute;
   width: 100%;
@@ -11,6 +13,7 @@
   overflow: visible;
   z-index: 999;
 }
+
 #loading-bar {
   position: relative;
   width: 0;
@@ -19,9 +22,11 @@
   transition: all 0.5s ease;
 }
 
+
 /**
  *  Universal Wrapper
  */
+
 .site-wrapper {
   position: relative;
   min-height: 100%;
@@ -33,13 +38,12 @@
 
 .dark-btn {
   display: inline-block;
-  background: rgba(0,0,0,0.3);
+  background: rgba(0, 0, 0, 0.3);
   border: 1px solid black;
   padding: 0px 15px;
   font-size: 13px;
   text-align: center;
   color: lighten(#8f8f8f, 20%);
-
   &:hover {
     color: lighten(#8f8f8f, 40%);
     background-color: $brand-color;
@@ -65,22 +69,19 @@
   border-top: 2px solid black;
   transition: all 0.24s ease;
   z-index: 3;
-
   @include max-screen($on-phone) {
     padding-bottom: 20px;
   }
-
   &-wrapper {
     position: relative;
     width: 100%;
     height: 70px;
     background: white;
     box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid lighten(#DEDFE1,1%);
+    border-bottom: 1px solid lighten(#DEDFE1, 1%);
     padding: 0px 20px;
     z-index: 3;
   }
-
   .logo {
     position: absolute;
     display: block;
@@ -92,22 +93,19 @@
     background: #000;
     padding: 10px 0px 12px 0px;
     transition: all 0.24s;
-
-    @media (max-width: $on-phone)  {
+    @media (max-width: $on-phone) {
       width: 140px;
       height: 70px;
       margin-left: -70px;
       padding: 10px 0px;
     }
-
     img {
       display: block;
       width: 70px;
       height: auto;
       margin: 0px auto;
       transition: all 0.24s;
-
-      @media (max-width: $on-phone)  {
+      @media (max-width: $on-phone) {
         width: 50px;
       }
     }
@@ -118,13 +116,11 @@
       font-size: 13px;
       line-height: 2;
       transition: all 0.24s;
-
-      @media (max-width: $on-phone)  {
+      @media (max-width: $on-phone) {
         font-size: 12px;
       }
     }
   }
-
   .site-nav-switch {
     position: relative;
     border: 0;
@@ -136,7 +132,6 @@
     margin-top: 20px;
     transition: all 0.24s ease;
     cursor: pointer;
-
     &.active {
       transform: rotate(90deg);
     }
@@ -157,19 +152,15 @@
   transform: translate3d(280px, 0, 0);
   transition: transform 0.24s ease;
   z-index: 2;
-
   @at-root {
     body.menu-open & {
       transform: translate3d( 0, 0, 0);
-
     }
   }
-
   .header-menu {
     list-style: none;
     margin: 0;
     padding: 0;
-
     li {
       margin: 0;
       padding: 0;
@@ -181,7 +172,6 @@
         padding: 5px 20px;
         border-left: 3px solid transparent;
         line-height: 1.5;
-
         &:hover {
           background-color: rgba(lighten(#e1e2e3, 3%), 0.6);
           border-color: $accent-color;
@@ -195,7 +185,6 @@
       font-size: 0.8125em;
       padding: 2px 20px;
       border-left: 3px solid transparent;
-
       &:hover {
         background-color: rgba(lighten(#e1e2e3, 3%), 0.6);
         border-color: $accent-color;
@@ -212,212 +201,189 @@
   margin: 0px auto;
   padding: 0px 30px 20px 30px;
   opacity: 0;
-  transform: translate3d(0px,-20px,0px);
+  transform: translate3d(0px, -20px, 0px);
   transition: all 0.24s ease;
-
   &.loaded {
-    transform: translate3d(0px,0px,0px);
+    transform: translate3d(0px, 0px, 0px);
     opacity: 1;
   }
-
   @media (max-width: $on-phone) {
     padding: 0px 20px 20px 20px;
   }
-
   .post-list {
     position: relative;
     width: 760px;
     margin: 0px auto;
-
     @media (max-width: $on-phone) {
       width: 100%;
     }
   }
-
-    .hentry {
-      position: relative;
-      margin-bottom: 50px;
-      padding: 40px 0px;
-      background: white;
-      box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.15);
-
-      @at-root {
-        .single-post & {
-          margin-bottom: 20px;
-        }
+  .hentry {
+    position: relative;
+    margin-bottom: 50px;
+    padding: 40px 0px;
+    background: white;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.15);
+    @at-root {
+      .single-post & {
+        margin-bottom: 20px;
       }
-
-      .entry-title {
-        display: block;
-        text-align: center;
-        font-size: 1.25em;
-        padding: 0px 20px;
-        margin: 0 0 .4em;
-
-        @media (max-width: $on-phone) {
-          font-size: 1em;
-        }
-        a {
-          display: inline;
-          line-height: 1.25;
-          font-weight: normal;
-          color: lighten($black, 2%);
-
-          &:hover {
-            color: lighten($material-green, 3%);
-          }
-        }
-      }
-
-      .entry-time {
-        display: block;
-        text-align: center;
-        color: lighten($grey-color, 20%);
-        font-size: 0.75em;
-        margin-bottom: 30px;
-      }
-
-      .entry-content {
-        color: lighten($black, 2%);
-        font-size: 14px;
-        line-height: 1.75em;
-        padding: 0px 30px;
-        @media (max-width: $on-phone) {
-          padding: 0px 20px;
-        }
-
-        p {
-          margin: 20px 0;
-        }
-
-        img {
-          position: relative;
-          display: block;
-          width: 114%;
-          margin: 0 -7%;
-          box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.15);
-          padding: 5px;
-          background: white;
-          transition: all 0.24s ease;
-
-
-          @media (max-width: $on-phone)  {
-            width: 100%;
-            margin: 0;
-            box-shadow: none;
-          }
-        }
-
-        ul,
-        ol {
-          list-style: circle;
-          margin: 20px 0px;
-          padding-left: 30px;
-        }
-
-        a {
-          color: darken($accent-color, 2%);
-
-          &:hover {
-            color: darken($accent-color, 3%);
-            background: rgba($accent-color, 0.1);
-          }
-          &:active {
-            background: rgba($accent-color, 0.2);
-            color: $white;
-          }
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-          position: relative;
-          @include font-header();
-          font-weight: bold;
-          margin: 40px auto 30px auto;
-          left: 20px;
-
-          &::before {
-            position: absolute;
-            left: -20px;
-            top: 0px;
-            content: "#";
-            color: $material-green;
-            font-weight: normal;
-          }
-        }
-
-        blockquote {
-          position: relative;
-          width: 100%;
-          margin: 20px 0px;
-          padding: 0px 20px;
-          border-left: 4px solid $material-green;
-        }
-        pre {
-          display: block;
-          -moz-box-sizing: border-box;
-          box-sizing: border-box;
-          width: 100%;
-          font-size: 13px;
-          margin: 20px 0px;
-          padding: 10px 15px;
-          background: lighten($background-color, 5%);
-          white-space: pre;
-          overflow: auto;
-
-          code {
-            color: $black;
-            margin: 0;
-            font-size: 1em;
-            background: transparent;
-            border: 0;
-            white-space: inherit;
-          }
-        }
-
-        code {
-          color: darken($brand-color, 2%);
-          padding: 3px 5px;
-          margin: 0px 2px;
-          border-radius: 2px;
-          white-space: nowrap;
-          font-size: 1em;
-          background: lighten($background-color,5%);
-        }
-      }
-
-      .post-tags {
-        margin-top: 50px;
-        padding: 0px 30px;
-        @media (max-width: $on-phone) {
-          padding: 0px 20px;
-        }
-        a {
-          position: relative;
-          padding: 4px 10px 4px 20px;
-          margin-right: 5px;
-          font-size: 14px;
-          background: $background-color;
-          border-radius: 2px;
-          vertical-align: middle;
-          line-height: 1.75em;
-          color: $black;
-
-          &:hover {
-            background: $black;
-            color: white;
-          }
-          &::before {
-            position: absolute;
-            top: 0;
-            left: 7px;
-            content: "#";
-          }
-        }
-      }
-
-
     }
-
+    .entry-title {
+      display: block;
+      text-align: center;
+      font-size: 1.25em;
+      padding: 0px 20px;
+      margin: 0 0 .4em;
+      @media (max-width: $on-phone) {
+        font-size: 1em;
+      }
+      a {
+        display: inline;
+        line-height: 1.25;
+        font-weight: normal;
+        color: lighten($black, 2%);
+        &:hover {
+          color: lighten($material-green, 3%);
+        }
+      }
+    }
+    .entry-time {
+      display: block;
+      text-align: center;
+      color: lighten($grey-color, 20%);
+      font-size: 0.75em;
+      margin-bottom: 30px;
+    }
+    .entry-content {
+      color: lighten($black, 2%);
+      font-size: 14px;
+      line-height: 1.75em;
+      padding: 0px 30px;
+      @media (max-width: $on-phone) {
+        padding: 0px 20px;
+      }
+      p {
+        margin: 20px 0;
+      }
+      img {
+        position: relative;
+        display: block;
+        width: 114%;
+        margin: 0 -7%;
+        box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.15);
+        padding: 5px;
+        background: white;
+        transition: all 0.24s ease;
+        @media (max-width: $on-phone) {
+          width: 100%;
+          margin: 0;
+          box-shadow: none;
+        }
+      }
+      ul,
+      ol {
+        list-style: circle;
+        margin: 20px 0px;
+        padding-left: 30px;
+      }
+      a {
+        color: darken($accent-color, 2%);
+        &:hover {
+          color: darken($accent-color, 3%);
+          background: rgba($accent-color, 0.1);
+        }
+        &:active {
+          background: rgba($accent-color, 0.2);
+          color: $white;
+        }
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        position: relative;
+        @include font-header();
+        font-weight: bold;
+        margin: 40px auto 30px auto;
+        left: 20px;
+        &::before {
+          position: absolute;
+          left: -20px;
+          top: 0px;
+          content: "#";
+          color: $material-green;
+          font-weight: normal;
+        }
+      }
+      blockquote {
+        position: relative;
+        width: 100%;
+        margin: 20px 0px;
+        padding: 0px 20px;
+        border-left: 4px solid $material-green;
+      }
+      pre {
+        display: block;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        width: 100%;
+        font-size: 13px;
+        margin: 20px 0px;
+        padding: 10px 15px;
+        background: lighten($background-color, 5%);
+        white-space: pre;
+        overflow: auto;
+        code {
+          color: $black;
+          margin: 0;
+          font-size: 1em;
+          background: transparent;
+          border: 0;
+          white-space: inherit;
+        }
+      }
+      code {
+        color: darken($brand-color, 2%);
+        padding: 3px 5px;
+        margin: 0px 2px;
+        border-radius: 2px;
+        white-space: nowrap;
+        font-size: 1em;
+        background: lighten($background-color, 5%);
+      }
+    }
+    .post-tags {
+      margin-top: 50px;
+      padding: 0px 30px;
+      @media (max-width: $on-phone) {
+        padding: 0px 20px;
+      }
+      a {
+        position: relative;
+        padding: 4px 10px 4px 20px;
+        margin-right: 5px;
+        font-size: 14px;
+        background: $background-color;
+        border-radius: 2px;
+        vertical-align: middle;
+        line-height: 1.75em;
+        color: $black;
+        &:hover {
+          background: $black;
+          color: white;
+        }
+        &::before {
+          position: absolute;
+          top: 0;
+          left: 7px;
+          content: "#";
+        }
+      }
+    }
+  }
   .post-nav {
     @include clearfix();
     font-size: 14px;
@@ -430,7 +396,6 @@
     .right {
       float: right;
     }
-
     a {
       border-radius: 2px;
       padding: 5px 10px;
@@ -438,11 +403,9 @@
         color: white;
         background: $black;
       }
-
       span {
         line-height: 20px;
         vertical-align: middle;
-
         &.icon {
           position: relative;
           top: 1px;
@@ -456,46 +419,38 @@
   padding: 30px;
   background: white;
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.15);
-
   .comments-title {
     margin: 0;
     line-height: 1.5;
     font-size: 1.2em;
     text-align: center;
   }
-
   .comment-list {
     list-style: none;
     margin: 0;
     padding: 0;
-
     .comment {
       list-style: none;
       margin: 0;
       padding: 0;
-
       ol.children {
         list-style: none;
         padding: 0;
         margin: 0;
         margin-left: 30px;
       }
-
       .comment-body {
         font-size: 1em;
         padding: 20px 0;
         border-bottom: 1px rgba(0, 0, 0, 0.1) solid;
-
         .comment-author {
           position: relative;
           padding-left: 50px;
-
           .avatar {
             position: absolute;
             top: 0;
             left: 0;
           }
-
           .says {
             display: none;
           }
@@ -506,19 +461,16 @@
           font-size: .875em;
           line-height: 1rem;
         }
-
         .comment-content {
           padding-left: 50px;
           font-size: .875em;
         }
-
         .reply {
           padding-left: 50px;
           .comment-reply-link {
             font-size: .875em;
             padding: 5px 15px;
             color: darken($accent-color, 2%);
-
             &:hover {
               color: darken($accent-color, 3%);
               background: rgba($accent-color, 0.1);
@@ -532,35 +484,28 @@
       }
     }
   }
-
   .comment-navigation {
     padding: 10px 0;
     @include clearfix();
-
     .nav-previous {
       float: left;
     }
-
     .nav-next {
       float: right;
     }
   }
-
   .comment-respond {
     .comment-reply-title {
       font-size: 1em;
     }
-
     .required {
       color: $material-red;
     }
-
     .submit {
       display: block;
       width: 100%;
       background: $background-color;
       color: black;
-
       &:hover {
         background-color: black;
         color: white;
@@ -581,24 +526,21 @@
   transition: all 0.4s ease;
   z-index: 3;
   opacity: 0;
-  transform: translate3d(0px,-20px,0px);
+  transform: translate3d(0px, -20px, 0px);
   &.loaded {
     transform: translate3d(0px, 0px, 0px);
     opacity: 1;
   }
-
   .search {
     position: relative;
     width: 100%;
     max-width: 100%;
     margin: 0px auto 20px auto;
     z-index: 2;
-
     .search-form {
       position: relative;
       display: block;
       width: 100%;
-
       .search-field {
         width: 100%;
         padding: 0px 10px;
@@ -611,13 +553,11 @@
         color: white;
         box-sizing: border-box;
         transition: all 0.24s ease;
-
         &:focus {
           background: black;
           border-color: black;
         }
       }
-
       .search-bar-trigger {
         display: block;
         position: absolute;
@@ -629,14 +569,12 @@
         color: white;
         border: 0;
         text-align: center;
-
         span {
           //line-height: 36px;
         }
       }
     }
   }
-
   .codename {
     color: $material-orange;
   }
@@ -645,7 +583,6 @@
   }
   a {
     color: $grey-color;
-
     &:hover {
       background: rgba($accent-color, 0.1);
       color: darken($accent-color, 3%);
@@ -656,7 +593,6 @@
       text-align: center;
       font-size: 18px;
       margin: 0px 3px;
-
       &:hover {
         background: transparent;
         color: $accent-color;

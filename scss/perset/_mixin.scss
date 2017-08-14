@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @mixin clearfix() {
   &::before,
   &::after {
@@ -21,23 +22,20 @@
   user-select: none;
 }
 
-@mixin max-screen($res){
-  @media only screen and ( max-width: $res )
-  {
+@mixin max-screen($res) {
+  @media only screen and ( max-width: $res) {
     @content;
   }
 }
 
-@mixin min-screen($res){
-  @media only screen and ( min-width: $res )
-  {
+@mixin min-screen($res) {
+  @media only screen and ( min-width: $res) {
     @content;
   }
 }
 
-@mixin min-max-screen($min, $max){
-  @media only screen and ( min-width: $min ) and ( max-width: $max )
-  {
+@mixin min-max-screen($min, $max) {
+  @media only screen and ( min-width: $min) and ( max-width: $max) {
     @content;
   }
 }
