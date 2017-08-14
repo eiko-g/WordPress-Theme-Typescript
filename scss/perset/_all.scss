@@ -1,3 +1,10 @@
+/*
+ * @Author: Eiko 
+ * @Date: 2017-08-14 16:49:56 
+ * @Last Modified by: Eiko
+ * @Last Modified time: 2017-08-14 16:58:48
+ */
+
 @charset "UTF-8";
 @import "_color";
 @import "_mixin";
@@ -25,11 +32,11 @@ $on-desktop: 1200px;
  */
 
 @mixin font-content() {
-  font-family: "Josefin Sans", "Helvetica Neue", 'Segoe UI Light', Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft JhengHei", "Microsoft Yahei", "Simhei", sans-serif;
+  font-family: "Josefin Sans", "Helvetica Neue", 'Segoe UI Light', Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei Light", "Microsoft Yahei", "Simhei", sans-serif;
 }
 
 @mixin font-header() {
-  font-family: "Josefin Sans", "Helvetica Neue", 'Segoe UI Light', Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft JhengHei", "Microsoft Yahei", "Simhei", sans-serif;
+  font-family: "Josefin Sans", "Helvetica Neue", 'Segoe UI Light', Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Simhei", sans-serif;
 }
 
 @mixin font-monospace() {

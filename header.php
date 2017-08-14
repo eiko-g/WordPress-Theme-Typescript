@@ -4,8 +4,20 @@
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name = "viewport" content ="initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
     <?php
       wp_head();
+      // 禁止搜索引擎收录评论分页
+      if( is_single() || is_page() ) {
+        if( function_exists('get_query_var') ) {
+            $cpage = intval(get_query_var('cpage'));
+            $commentPage = intval(get_query_var('comment-page'));
+        }
+        if( !empty($cpage) || !empty($commentPage) ) {
+            echo '<meta name="robots" content="noindex, nofollow" />';
+            echo "\n";
+        }
+    }
     ?>
 </head>
 
@@ -15,6 +27,22 @@
     <div id="loading-bar"></div>
 </div>
 <script>jQuery("#loading-bar").css('width','20%');</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <div class="site-wrapper">
     <header id="header" class="header">

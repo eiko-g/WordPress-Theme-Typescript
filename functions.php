@@ -1,44 +1,49 @@
 <?php
-function r_theme_prefix_setup()
-{
-    /*
-      各种 Theme support
-      https://codex.wordpress.org/Function_Reference/add_theme_support
-    */
-    add_theme_support('title-tag'); // 站点标题
-    add_theme_support('automatic-feed-links'); // 订阅链接
-    add_theme_support('html5', array(
-        'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
-    )); // HTML5 格式
-
-    add_theme_support('custom-logo', array(
-        'height' => 72,
-        'width' => 144,
-        'flex-width' => true,
-        'flex-height' => true,
-        'header-text' => array('site-title', 'site-description'),
-    )); // 自定义 Logo
-}
-add_action( 'after_setup_theme', 'r_theme_prefix_setup' );
-
+// 初始化主题
 $theme_info = wp_get_theme();
 define('R_THEME_VERSION', $theme_info->get('Version'));
+if ( !function_exists('theme_typescript_setup') ) {
+    function theme_typescript_setup() {
+        /*
+          各种 Theme support
+          https://codex.wordpress.org/Function_Reference/add_theme_support
+        */
+        add_theme_support( 'title-tag' );
+        add_theme_support( 'post-thumbnails' );
+        add_theme_support( 'automatic-feed-links' );
+        add_theme_support( 'html5', [
+            'search-form',
+            'comment-form',
+            'comment-list',
+            'gallery',
+            'caption',
+        ] );
+        add_theme_support( 'post-formats', [
+            'status',
+        ] );
 
-/*
-  注册菜单
-*/
-register_nav_menus(array('header-menu' => '主菜单'));
+        // 特色图片支持
+        add_image_size('thumbnail-img', 1000, 600);
 
-/*
-  注册各种
-*/
-function r_theme_loading() {
-    wp_register_script( 'main-script', get_template_directory_uri() . '/script/main.js',array( 'jquery' ), R_THEME_VERSION);
+        // 多语言支持
+        // 还是懒
+        // load_theme_textdomain( 'heya', get_template_directory() . '/languages' );
+
+        // 注册菜单
+        register_nav_menus( [
+            'primary' => '主菜单',
+        ] );
+    }
+}
+add_action( 'after_setup_theme', 'theme_typescript_setup' );
+
+// 载入各种
+function theme_typescript_loading() {
+    wp_register_script( 'main-script', get_template_directory_uri() . '/scripts/main.js',[ 'jquery' ], R_THEME_VERSION, true);
     wp_enqueue_script( 'main-script' );
-    wp_enqueue_style( 'normalize', get_template_directory_uri() . '/css/normalize.css', '', '4.1.1' );
     wp_enqueue_style( 'main-style', get_template_directory_uri() . '/css/main.css', '', R_THEME_VERSION );
 }
-add_action( 'wp_enqueue_scripts', 'r_theme_loading' );
+add_action( 'wp_enqueue_scripts', 'theme_typescript_loading' );
 
 /*
   自定义用户设置页的社交联系方式
